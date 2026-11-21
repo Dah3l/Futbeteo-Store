@@ -6,12 +6,12 @@
 <title>Futbeteo Store — La moda del fútbol a tu alcance</title>
 <link rel="icon" type="image/svg+xml" href="logo.svg">
 <meta name="description" content="Futbeteo Store: camisetas retro, actuales y personalizadas de fútbol, béisbol, basketball, NFL y Fórmula 1. Envíos a todo el país. Pide por WhatsApp.">
-<link rel="stylesheet" href="css/styles.css?v=2">
+<link rel="stylesheet" href="css/styles.css?v=3">
 </head>
 <body>
 <header>
   <div class="header-in">
-    <a class="logo" href="#"><span class="logo-ball"><img src="logo.svg" alt="Futbeteo Store"></span><span>FUTBETEO <em>STORE</em></span></a>
+    <a class="logo" href="index.html"><span class="logo-ball"><img src="logo.svg" alt="Futbeteo Store"></span><span>FUTBETEO <em>STORE</em></span></a>
     <span class="spacer"></span>
     <a class="wa-btn" href="https://wa.link/sq26tn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.8l.4-.5c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg><span class="wa-label">WhatsApp</span></a>
     <button class="cart-btn" id="cartBtn" type="button" aria-label="Carrito"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 4h2l2.4 12.2A2 2 0 0 0 9.4 18h7.9a2 2 0 0 0 2-1.6L21 8H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="21" r="1.4" fill="currentColor"/><circle cx="18" cy="21" r="1.4" fill="currentColor"/></svg><span class="cart-count" id="cartCount" style="display:none">0</span></button>
@@ -135,7 +135,7 @@
   <div class="container">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a class="logo" href="#"><span class="logo-ball"><img src="logo.svg" alt="Futbeteo Store"></span><span>FUTBETEO <em>STORE</em></span></a>
+        <a class="logo" href="index.html"><span class="logo-ball"><img src="logo.svg" alt="Futbeteo Store"></span><span>FUTBETEO <em>STORE</em></span></a>
         <p>La moda del fútbol a tu alcance. Camisetas retro, actuales y personalizadas, con envíos a todo el país.</p>
         <div class="foot-social">
           <a href="https://instagram.com/futbeteo_store" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg></a>
@@ -170,19 +170,16 @@
 
 <a class="wa-float" href="https://wa.link/sq26tn" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.8l.4-.5c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></a>
 
-<div class="overlay" id="productOverlay">
-  <div class="sheet" id="productSheet"></div>
-</div>
-
 <div class="drawer" id="cartDrawer">
-  <div class="drawer-head"><h2>Tu pedido</h2><button class="sheet-close" id="cartClose" type="button">✕</button></div>
+  <div class="drawer-head"><h2>Tu pedido</h2><button class="close-btn" id="cartClose" type="button">✕</button></div>
   <div class="drawer-body" id="cartBody"></div>
   <div class="drawer-foot" id="cartFoot"></div>
 </div>
 
 <div class="toast" id="toast"></div>
 
-<script src="js/products.js?v=2"></script>
-<script src="js/app.js?v=2"></script>
+<script src="js/products.js?v=3"></script>
+<script src="js/common.js?v=3"></script>
+<script src="js/app.js?v=3"></script>
 </body>
 </html>
