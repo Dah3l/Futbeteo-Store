@@ -7,9 +7,9 @@
 <meta name="description" content="Futbeteo Store: camisetas retro, actuales y personalizadas de fútbol, béisbol, basketball, NFL y Fórmula 1. Envíos a todo el país. Pide por WhatsApp.">
 <style>
 :root{
-  --bg:#0b0f0e; --surface:#141a18; --surface2:#1b221f; --line:#263029;
-  --text:#f2f5f3; --muted:#9aa5a0; --accent:#00e676; --accent-d:#00b85c;
-  --gold:#ffd60a; --danger:#ff5c5c; --radius:16px;
+  --bg:#0a0a0a; --surface:#131313; --surface2:#1c1c1c; --line:#2a2a2a;
+  --text:#f5f5f5; --muted:#a3a3a3; --accent:#ffffff; --accent-d:#d9d9d9;
+  --gold:#f5f5f5; --danger:#ff5c5c; --radius:16px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.5}
@@ -21,24 +21,42 @@ button{font-family:inherit;cursor:pointer}
 header{position:sticky;top:0;z-index:40;background:rgba(11,15,14,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .header-in{display:flex;align-items:center;gap:12px;padding:12px 16px;max-width:1100px;margin:0 auto}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:19px;letter-spacing:.3px}
-.logo-ball{width:34px;height:34px;border-radius:50%;background:var(--accent);display:grid;place-items:center;font-size:19px}
+.logo-ball{width:34px;height:34px;border-radius:50%;background:var(--text);display:grid;place-items:center;color:#0a0a0a}
+.logo-ball svg{width:20px;height:20px}
 .logo span em{font-style:normal;color:var(--accent)}
 .header-in .spacer{flex:1}
 .wa-btn{background:#25d366;color:#062b16;border:0;border-radius:999px;padding:9px 15px;font-weight:700;font-size:14px;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
 .cart-btn{position:relative;background:var(--surface2);color:var(--text);border:1px solid var(--line);border-radius:999px;padding:9px 14px;font-weight:700;font-size:14px}
+.cart-btn svg{width:16px;height:16px;vertical-align:-3px}
 .cart-count{position:absolute;top:-7px;right:-7px;background:var(--accent);color:#04160b;min-width:20px;height:20px;border-radius:999px;display:grid;place-items:center;font-size:12px;font-weight:800;padding:0 5px}
 /* Hero */
-.hero{padding:38px 0 26px;background:radial-gradient(600px 300px at 85% -10%,rgba(0,230,118,.22),transparent 60%),radial-gradient(500px 260px at 0% 110%,rgba(255,214,10,.10),transparent 60%)}
-.hero h1{font-size:clamp(30px,7vw,52px);line-height:1.08;font-weight:900;letter-spacing:-.5px}
-.hero h1 em{font-style:normal;color:var(--accent)}
-.hero p{color:var(--muted);margin:12px 0 20px;font-size:16px;max-width:560px}
+.hero{padding:44px 0 0;position:relative;overflow:hidden;background:radial-gradient(700px 340px at 85% -10%,rgba(255,255,255,.09),transparent 60%)}
+.hero-grid{display:grid;gap:28px;align-items:center}
+@media(min-width:820px){.hero-grid{grid-template-columns:1.05fr .95fr}}
+.hero-kicker{font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
+.hero-kicker b{color:var(--text)}
+.hero h1{font-size:clamp(42px,9vw,76px);line-height:.98;font-weight:900;letter-spacing:-1.5px;text-transform:uppercase;margin:14px 0 0}
+.hero h1 .outline{display:block;color:transparent;-webkit-text-stroke:2px var(--text)}
+.hero p{color:var(--muted);margin:16px 0 22px;font-size:16px;max-width:520px}
+.hero-visual{position:relative;display:grid;place-items:center;padding:10px 0 0}
+.hero-ring{position:absolute;width:min(78vw,380px);height:min(78vw,380px);border:1px solid var(--line);border-radius:50%}
+.hero-ring::after{content:"";position:absolute;inset:22px;border:1px dashed var(--line);border-radius:50%}
+.hero-visual svg.jersey-big{position:relative;width:min(72vw,330px);height:auto;transform:rotate(-6deg);filter:drop-shadow(0 24px 32px rgba(0,0,0,.6))}
+.hero-tag{position:absolute;background:var(--text);color:#0a0a0a;border-radius:999px;padding:8px 14px;font-size:12px;font-weight:800;letter-spacing:.6px;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.hero-tag.t1{top:6%;right:2%;transform:rotate(3deg)}
+.hero-tag.t2{bottom:10%;left:0;transform:rotate(-3deg)}
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:34px;overflow:hidden;white-space:nowrap;padding:12px 0}
+.marquee span{display:inline-block;font-weight:800;font-size:14px;letter-spacing:2.5px;text-transform:uppercase;padding-left:8px;animation:scroll 26s linear infinite}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .hero-cta{display:flex;gap:10px;flex-wrap:wrap}
 .btn{display:inline-block;border-radius:999px;padding:12px 20px;font-weight:800;font-size:15px;text-decoration:none;border:0}
 .btn-green{background:var(--accent);color:#04160b}
+.btn-wa{background:#25d366;color:#062b16}
 .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
 .trust{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
 .trust span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:13px;color:var(--muted)}
 .trust span b{color:var(--text)}
+.trust span svg{vertical-align:-2px}
 /* Sections */
 section{padding:28px 0}
 .sec-head{display:flex;align-items:baseline;gap:10px;margin-bottom:14px}
@@ -62,10 +80,7 @@ section{padding:28px 0}
 .card-img svg{width:100%;height:auto}
 .card-body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
 .badge{align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;border-radius:999px;padding:4px 9px}
-.badge-retro{background:rgba(255,214,10,.15);color:var(--gold)}
-.badge-actual{background:rgba(0,230,118,.14);color:var(--accent)}
-.badge-pers{background:rgba(139,92,246,.18);color:#c4b5fd}
-.badge-otro{background:rgba(255,255,255,.08);color:var(--muted)}
+.badge-retro,.badge-actual,.badge-pers,.badge-otro{background:rgba(255,255,255,.10);color:var(--text);border:1px solid var(--line)}
 .card h3{font-size:15px;line-height:1.3}
 .card .meta{font-size:13px;color:var(--muted)}
 .price-row{display:flex;align-items:baseline;gap:8px;margin-top:auto}
@@ -88,11 +103,23 @@ section{padding:28px 0}
 .steps li{counter-increment:s;list-style:none;color:var(--muted);font-size:14px;padding:7px 0 7px 34px;position:relative}
 .steps li::before{content:counter(s);position:absolute;left:0;top:7px;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#04160b;font-weight:800;font-size:13px;display:grid;place-items:center}
 /* Footer */
-footer{border-top:1px solid var(--line);padding:26px 0 90px;color:var(--muted);font-size:14px}
-footer a{color:var(--accent);text-decoration:none}
-.demo-note{margin-top:14px;font-size:13px;background:rgba(255,214,10,.08);border:1px solid rgba(255,214,10,.3);color:var(--gold);border-radius:10px;padding:10px 12px}
+footer{border-top:1px solid var(--line);padding:44px 0 100px;color:var(--muted);font-size:14px}
+footer a{color:var(--text);text-decoration:none}
+footer a:hover{text-decoration:underline}
+.foot-grid{display:grid;gap:28px}
+@media(min-width:760px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr}}
+.foot-brand p{margin-top:10px;max-width:300px}
+.foot-col h4{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--text);margin-bottom:12px}
+.foot-col ul{list-style:none}
+.foot-col li{margin-bottom:8px}
+.foot-social{display:flex;gap:10px;margin-top:16px}
+.foot-social a{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center}
+.foot-social a:hover{border-color:var(--text)}
+.foot-bottom{border-top:1px solid var(--line);margin-top:34px;padding-top:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px}
+.demo-note{margin-top:18px;font-size:12px;color:var(--muted);border:1px dashed var(--line);border-radius:10px;padding:10px 12px}
 /* Floating WhatsApp */
-.wa-float{position:fixed;right:16px;bottom:16px;z-index:50;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;text-decoration:none;font-size:26px;box-shadow:0 6px 20px rgba(0,0,0,.45)}
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:50;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.45)}
+.wa-float svg{width:28px;height:28px}
 /* Modal */
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:80;display:none;align-items:flex-end;justify-content:center}
 .overlay.open{display:flex}
@@ -142,27 +169,39 @@ footer a{color:var(--accent);text-decoration:none}
 <body>
 <header>
   <div class="header-in">
-    <a class="logo" href="#"><span class="logo-ball">⚽</span><span>FUTBETEO <em>STORE</em></span></a>
+    <a class="logo" href="#"><span class="logo-ball"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7.5l3.2 2.3-1.2 3.8h-4L8.8 9.8 12 7.5z" fill="currentColor"/><path d="M12 3.5v4M5.5 8.5l3.8 1.4M18.5 8.5l-3.8 1.4M6 17l3-1.5M18 17l-3-1.5" stroke="currentColor" stroke-width="1.4"/></svg></span><span>FUTBETEO <em>STORE</em></span></a>
     <span class="spacer"></span>
-    <a class="wa-btn" href="https://wa.me/5358423238" target="_blank" rel="noopener">WhatsApp</a>
-    <button class="cart-btn" id="cartBtn" type="button">🛒 Carrito <span class="cart-count" id="cartCount" style="display:none">0</span></button>
+    <a class="wa-btn" href="https://wa.link/sq26tn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.8l.4-.5c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>WhatsApp</a>
+    <button class="cart-btn" id="cartBtn" type="button"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 4h2l2.4 12.2A2 2 0 0 0 9.4 18h7.9a2 2 0 0 0 2-1.6L21 8H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="21" r="1.4" fill="currentColor"/><circle cx="18" cy="21" r="1.4" fill="currentColor"/></svg> Carrito <span class="cart-count" id="cartCount" style="display:none">0</span></button>
   </div>
 </header>
 
 <section class="hero">
   <div class="container">
-    <h1>La moda del fútbol<br><em>a tu alcance.</em></h1>
-    <p>Camisetas retro, actuales y personalizadas de fútbol, béisbol, basketball, NFL y Fórmula 1. Elige la tuya y pídela por WhatsApp.</p>
-    <div class="hero-cta">
-      <a class="btn btn-green" href="#catalogo">Ver camisetas</a>
-      <a class="btn btn-ghost" href="#personalizadas">Personalizar la mía</a>
-    </div>
-    <div class="trust">
-      <span>🚚 <b>Envíos a todo el país</b></span>
-      <span>✅ <b>Camisetas originales</b></span>
-      <span>📍 <b>La Habana · Solo con cita</b></span>
+    <div class="hero-grid">
+      <div>
+        <p class="hero-kicker">Futbeteo Store — <b>La Habana</b></p>
+        <h1>La moda<br>del fútbol<br><span class="outline">a tu alcance.</span></h1>
+        <p>Camisetas retro, actuales y personalizadas de fútbol, béisbol, basketball, NFL y Fórmula 1. Elige la tuya y pídela por WhatsApp.</p>
+        <div class="hero-cta">
+          <a class="btn btn-green" href="#catalogo">Elige tu camiseta favorita</a>
+          <a class="btn btn-ghost" href="#personalizadas">Personalizar la mía</a>
+        </div>
+        <div class="trust">
+          <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" aria-hidden="true"><path d="M2 6h12v10H2zM14 9h4l3 3v4h-7z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="6.5" cy="18" r="1.8" fill="currentColor"/><circle cx="17" cy="18" r="1.8" fill="currentColor"/></svg> <b>Envíos a todo el país</b></span>
+          <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg> <b>100% máxima calidad</b></span>
+          <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-10.5a6.5 6.5 0 1 1 13 0C18.5 15.4 12 21 12 21z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10.5" r="2.3" stroke="currentColor" stroke-width="1.7"/></svg> <b>Playa, Miramar · Solo con cita</b></span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <span class="hero-ring"></span>
+        <svg class="jersey-big" viewBox="0 0 200 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Camiseta Futbeteo Store"><path d="M70 30 L50 40 L30 76 L56 90 L62 76 L62 176 Q62 184 70 184 L130 184 Q138 184 138 176 L138 76 L144 90 L170 76 L150 40 L130 30 Q118 46 100 46 Q82 46 70 30 Z" fill="#f5f5f5" stroke="rgba(0,0,0,.35)" stroke-width="2"/><path d="M50 40 L30 76 L56 90 L64 74 L64 50 Z" fill="#e8e8e8"/><path d="M150 40 L170 76 L144 90 L136 74 L136 50 Z" fill="#e8e8e8"/><path d="M82 32 Q100 48 118 32" fill="none" stroke="#111111" stroke-width="5" stroke-linecap="round"/><text x="100" y="140" text-anchor="middle" font-family="Arial,sans-serif" font-size="46" font-weight="900" fill="#111111">7</text><text x="100" y="166" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="2" fill="#111111" opacity="0.8">FUTBETEO</text></svg>
+        <span class="hero-tag t1">Nuevo drop · Vice City</span>
+        <span class="hero-tag t2">Retro · Actuales · Personalizadas</span>
+      </div>
     </div>
   </div>
+  <div class="marquee"><span>Retro ✦ Actuales ✦ Personalizadas ✦ Béisbol ✦ Basketball ✦ NFL ✦ Fórmula 1 ✦ Envíos a todo el país ✦&nbsp; Retro ✦ Actuales ✦ Personalizadas ✦ Béisbol ✦ Basketball ✦ NFL ✦ Fórmula 1 ✦ Envíos a todo el país ✦&nbsp; </span></div>
 </section>
 
 <section id="catalogo">
@@ -217,20 +256,49 @@ footer a{color:var(--accent);text-decoration:none}
 
 <footer>
   <div class="container">
-    <p><b style="color:var(--text)">Futbeteo Store</b> · Avenida 3ra A esquina 92 #9012, La Habana, Cuba · Solo con cita</p>
-    <p>WhatsApp: <a href="https://wa.me/5358423238">+53 5 8423238</a> · Instagram: <a href="https://instagram.com/futbeteo_store">@futbeteo_store</a> · <a href="https://instagram.com/juampi.6r">@juampi.6r</a></p>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="#"><span class="logo-ball"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7.5l3.2 2.3-1.2 3.8h-4L8.8 9.8 12 7.5z" fill="currentColor"/><path d="M12 3.5v4M5.5 8.5l3.8 1.4M18.5 8.5l-3.8 1.4M6 17l3-1.5M18 17l-3-1.5" stroke="currentColor" stroke-width="1.4"/></svg></span><span>FUTBETEO <em>STORE</em></span></a>
+        <p>La moda del fútbol a tu alcance. Camisetas retro, actuales y personalizadas, con envíos a todo el país.</p>
+        <div class="foot-social">
+          <a href="https://instagram.com/futbeteo_store" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg></a>
+          <a href="https://wa.link/sq26tn" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.8l.4-.5c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Tienda</h4>
+        <ul>
+          <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="#personalizadas">Personalizadas</a></li>
+          <li><a href="#envios">Envíos</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li>Avenida 3ra A esquina 92 #9012, Playa, Miramar, La Habana</li>
+          <li>Solo con cita</li>
+          <li><a href="https://wa.me/5358423238">+53 5 8423238</a></li>
+          <li><a href="https://instagram.com/futbeteo_store">@futbeteo_store</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Futbeteo Store. Todos los derechos reservados.</span>
+      <span>La Habana, Cuba</span>
+    </div>
     <p class="demo-note">Muestra: las camisetas, los precios y las fotos son de ejemplo. Al lanzar, se ponen las fotos y los precios reales de la tienda.</p>
   </div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/5358423238" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+<a class="wa-float" href="https://wa.link/sq26tn" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.8l.4-.5c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></a>
 
 <div class="overlay" id="productOverlay">
   <div class="sheet" id="productSheet"></div>
 </div>
 
 <div class="drawer" id="cartDrawer">
-  <div class="drawer-head"><h2>Tu pedido 🛒</h2><button class="sheet-close" id="cartClose" type="button">✕</button></div>
+  <div class="drawer-head"><h2>Tu pedido</h2><button class="sheet-close" id="cartClose" type="button">✕</button></div>
   <div class="drawer-body" id="cartBody"></div>
   <div class="drawer-foot" id="cartFoot"></div>
 </div>
@@ -379,7 +447,7 @@ function openProduct(id){
     + '<input id="persNum" type="text" maxlength="2" inputmode="numeric" placeholder="Ej: 10"></div>'
     + '<div class="price-row"><span class="price">'+money(p.price)+'</span>'+(p.old?'<span class="price-old">'+money(p.old)+'</span>':'')+'</div>'
     + '<div class="modal-actions"><button type="button" class="btn btn-ghost" onclick="addFromSheet()">Añadir al pedido</button>'
-    + '<button type="button" class="btn btn-green" onclick="orderDirect()">Pedir por WhatsApp</button></div>';
+    + '<button type="button" class="btn btn-wa" onclick="orderDirect()">Pedir por WhatsApp</button></div>';
   document.querySelectorAll("#sizePills .size-pill").forEach(b => b.onclick = () => {
     selSize = b.dataset.size;
     document.querySelectorAll("#sizePills .size-pill").forEach(x=>x.classList.toggle("active", x===b));
@@ -446,7 +514,7 @@ function renderCart(){
     + PROVINCES.map(pr=>'<option'+(pr==="La Habana"?" selected":"")+'>'+pr+'</option>').join("") + '</select></div>'
     + '<div class="total-row"><span>Total</span><span>'+money(total)+'</span></div>'
     + '<p style="font-size:13px;color:var(--muted);margin-bottom:12px">El costo del envío se coordina por WhatsApp según la provincia.</p>'
-    + '<button type="button" class="btn btn-green" style="width:100%" onclick="checkout()">Pedir por WhatsApp</button>';
+    + '<button type="button" class="btn btn-wa" style="width:100%" onclick="checkout()">Pedir por WhatsApp</button>';
 }
 function chQty(idx, d){
   cart[idx].qty += d;
