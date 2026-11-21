@@ -110,11 +110,14 @@ function checkout(){
 
 /* Tarjeta de producto compartida (catálogo y relacionados). */
 function cardHTML(p){
+  const out = p.out || [];
+  const avail = out.length ? '<p class="card-avail">Talla'+(out.length>1?'s':'')+' '+out.join(", ")+' agotada'+(out.length>1?'s':'')+'</p>' : '';
   return '<article class="card">'
     + '<a class="card-link" href="producto.html?id='+p.id+'" aria-label="'+p.name+'"><div class="card-img">'+jersey(p)+'</div></a>'
     + '<div class="card-body"><a class="card-link" href="producto.html?id='+p.id+'"><p class="card-name">'+p.name+'</p></a>'
     + '<p class="card-meta">'+p.team+' · '+p.season+'</p>'
-    + '<p class="card-price">'+money(p.price)+(p.old?'<span class="price-old">'+money(p.old)+'</span>':'')+'</p></div>'
+    + '<p class="card-price">'+money(p.price)+(p.old?'<span class="price-old">'+money(p.old)+'</span>':'')+'</p>'
+    + avail + '</div>'
     + '<div class="card-foot"><button type="button" class="btn-add" onclick="quickAdd('+p.id+')">Añadir</button></div>'
     + '</article>';
 }
