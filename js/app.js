@@ -5,7 +5,7 @@ const $ = id => document.getElementById(id);
 const money = n => "$" + n;
 let cart = [];
 try { cart = JSON.parse(localStorage.getItem("futbeteo_cart") || "[]"); } catch(e) { cart = []; }
-let activeCat = "all", currentProduct = null, selSize = null, selQty = 1;
+let activeCat = "all", currentProduct = null, selSize = null, selQty = 1, filterTeam = "all", filterSize = "all";
 
 function jersey(p){
   const body = "M70 30 L50 40 L30 76 L56 90 L62 76 L62 176 Q62 184 70 184 L130 184 Q138 184 138 176 L138 76 L144 90 L170 76 L150 40 L130 30 Q118 46 100 46 Q82 46 70 30 Z";
@@ -25,6 +25,19 @@ function jersey(p){
 
 function availSizes(p){ return p.sizes.filter(s => !(p.out||[]).includes(s)); }
 
+function renderTeamOptions(){
+  const teams = [...new Set(PRODUCTS.filter(p => p.cat!=="pers").map(p => p.team))].sort();
+  $("teamSelect").innerHTML = '<option value="all">Todos los equipos</option>'
+    + teams.map(t => '<option value="'+t+'"'+(filterTeam===t?" selected":"")+'>'+t+'</option>').join("");
+}
+function toggleClear(){ $("searchClear").classList.toggle("show", $("searchInput").value.length > 0); }
+function togglePanel(){
+  const panel = $("filterPanel"), open = panel.hidden;
+  panel.hidden = !open;
+  $("filtersBtn").classList.toggle("active", open);
+  $("filtersBtn").setAttribute("aria-expanded", open ? "true" : "false");
+}
+
 function renderFilters(){
   $("filters").innerHTML = CATS.map(c =>
     '<button type="button" class="chip'+(activeCat===c[0]?" active":"")+'" data-cat="'+c[0]+'">'+c[1]+'</button>').join("");
@@ -34,6 +47,8 @@ function renderFilters(){
 function filtered(){
   const q = $("searchInput").value.trim().toLowerCase();
   let list = PRODUCTS.filter(p => (activeCat==="all" || p.cat===activeCat)
+    && (filterTeam==="all" || p.team===filterTeam)
+    && (filterSize==="all" || p.sizes.includes(filterSize))
     && (!q || (p.name+" "+p.team+" "+p.league).toLowerCase().includes(q)));
   const s = $("sortSelect").value;
   if (s==="low") list = [...list].sort((a,b)=>a.price-b.price);
@@ -190,8 +205,12 @@ function checkout(){
   openWa(cart, province, client);
 }
 
-$("searchInput").addEventListener("input", renderGrid);
+$("searchInput").addEventListener("input", () => { toggleClear(); renderGrid(); });
 $("sortSelect").addEventListener("change", renderGrid);
+$("teamSelect").addEventListener("change", () => { filterTeam = $("teamSelect").value; renderGrid(); });
+$("sizeSelect").addEventListener("change", () => { filterSize = $("sizeSelect").value; renderGrid(); });
+$("filtersBtn").addEventListener("click", togglePanel);
+$("searchClear").addEventListener("click", () => { $("searchInput").value = ""; toggleClear(); renderGrid(); $("searchInput").focus(); });
 $("cartBtn").addEventListener("click", () => { renderCart(); $("cartDrawer").classList.add("open"); });
 $("cartClose").addEventListener("click", () => $("cartDrawer").classList.remove("open"));
 $("productOverlay").addEventListener("click", e => { if (e.target === $("productOverlay")) closeProduct(); });
@@ -237,6 +256,7 @@ renderCust();
 
 
 renderFilters();
+renderTeamOptions();
 renderGrid();
 renderCart();
 saveCart();
