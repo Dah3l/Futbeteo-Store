@@ -26,7 +26,7 @@ function jersey(p){
     + '<path d="M82 32 Q100 48 118 32" fill="none" stroke="'+p.trim+'" stroke-width="5" stroke-linecap="round"/>'
     + extra
     + '<text x="100" y="140" text-anchor="middle" font-family="'+FONT+'" font-size="46" font-weight="900" fill="'+p.numColor+'">'+p.num+'</text>'
-    + '<text x="100" y="166" text-anchor="middle" font-family="'+FONT+'" font-size="10" font-weight="700" letter-spacing="2" fill="'+p.numColor+'" opacity="0.85">'+p.team.toUpperCase().slice(0,18)+'</text>'
+    + '<text x="100" y="166" text-anchor="middle" font-family="'+FONT+'" font-size="10" font-weight="700" letter-spacing="2" textLength="68" lengthAdjust="spacingAndGlyphs" fill="'+p.numColor+'" opacity="0.85">'+p.team.toUpperCase().slice(0,18)+'</text>'
     + '</svg>';
 }
 
