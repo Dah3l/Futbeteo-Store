@@ -20,7 +20,7 @@ function renderDetail(){
   const isPers = p.cat==="pers";
   document.title = p.name+" — Futbeteo Store";
   box.innerHTML =
-    '<nav class="crumbs"><a href="index.html">Inicio</a> <span>/</span> <a href="index.html#catalogo">'+catName(p)+'</a> <span>/</span> <b>'+p.name+'</b></nav>'
+    '<nav class="crumbs"><a href="index.html">Inicio</a> <span>/</span> <a href="catalogo.html?cat='+p.cat+'">'+catName(p)+'</a> <span>/</span> <b>'+p.name+'</b></nav>'
     + '<div class="detail">'
     + '<div class="detail-img">'+jersey(p)+'</div>'
     + '<div class="detail-info">'
@@ -80,9 +80,6 @@ function renderRelated(p){
   if (!rel.length){ $("relatedSec").hidden = true; return; }
   $("relatedGrid").innerHTML = rel.map(x => cardHTML(x)).join("");
 }
-
-$("cartBtn").addEventListener("click", () => { renderCart(); $("cartDrawer").classList.add("open"); });
-$("cartClose").addEventListener("click", () => $("cartDrawer").classList.remove("open"));
 
 renderDetail();
 renderCart();
