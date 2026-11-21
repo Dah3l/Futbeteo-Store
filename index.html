@@ -26,6 +26,8 @@ header{position:sticky;top:0;z-index:40;background:rgba(11,15,14,.92);backdrop-f
 .logo span em{font-style:normal;color:var(--accent)}
 .header-in .spacer{flex:1}
 .wa-btn{background:#25d366;color:#062b16;border:0;border-radius:999px;padding:9px 15px;font-weight:700;font-size:14px;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.wa-btn svg{flex:0 0 auto}
+@media(max-width:560px){.wa-label{display:none}.wa-btn{padding:9px 11px}}
 .cart-btn{position:relative;background:var(--surface2);color:var(--text);border:1px solid var(--line);border-radius:999px;padding:9px 14px;font-weight:700;font-size:14px}
 .cart-btn svg{width:16px;height:16px;vertical-align:-3px}
 .cart-count{position:absolute;top:-7px;right:-7px;background:var(--accent);color:#04160b;min-width:20px;height:20px;border-radius:999px;display:grid;place-items:center;font-size:12px;font-weight:800;padding:0 5px}
@@ -37,6 +39,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(11,15,14,.92);backdrop-f
 .hero-kicker b{color:var(--text)}
 .hero h1{font-size:clamp(42px,9vw,76px);line-height:.98;font-weight:900;letter-spacing:-1.5px;text-transform:uppercase;margin:14px 0 0}
 .hero h1 .outline{display:block;color:transparent;-webkit-text-stroke:2px var(--text)}
+.hero h1 .a-solid{color:var(--text);-webkit-text-stroke:0}
 .hero p{color:var(--muted);margin:16px 0 22px;font-size:16px;max-width:520px}
 .hero-visual{position:relative;display:grid;place-items:center;padding:10px 0 0}
 .hero-ring{position:absolute;width:min(78vw,380px);height:min(78vw,380px);border:1px solid var(--line);border-radius:50%}
@@ -65,10 +68,10 @@ section{padding:28px 0}
 /* Filters */
 .filters{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px;scrollbar-width:none}
 .filters::-webkit-scrollbar{display:none}
-.chip{flex:0 0 auto;background:var(--surface);border:1px solid var(--line);color:var(--text);border-radius:999px;padding:9px 15px;font-size:14px;font-weight:600}
+.chip{flex:0 0 auto;background:var(--surface);border:1px solid var(--line);color:var(--text);border-radius:999px;padding:11px 16px;font-size:14px;font-weight:600}
 .chip.active{background:var(--accent);color:#04160b;border-color:var(--accent)}
 .search-row{display:flex;gap:8px;margin:6px 0 16px}
-.search-row input{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:12px;color:var(--text);padding:12px 14px;font-size:15px;outline:none}
+.search-row input{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:12px;color:var(--text);padding:12px 14px;font-size:16px;outline:none}
 .search-row input:focus{border-color:var(--accent)}
 .search-row select{background:var(--surface);border:1px solid var(--line);border-radius:12px;color:var(--text);padding:0 10px;font-size:14px;outline:none}
 /* Grid + cards */
@@ -88,8 +91,8 @@ section{padding:28px 0}
 .price-old{font-size:13px;color:var(--muted);text-decoration:line-through}
 .sizes{font-size:12px;color:var(--muted)}
 .card-actions{display:flex;gap:8px;margin-top:10px}
-.btn-add{flex:1;background:var(--accent);color:#04160b;border:0;border-radius:10px;padding:10px;font-weight:800;font-size:14px}
-.btn-view{background:var(--surface2);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-weight:700;font-size:14px}
+.btn-add{flex:1;background:var(--accent);color:#04160b;border:0;border-radius:10px;padding:12px;font-weight:800;font-size:14px}
+.btn-view{background:var(--surface2);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:12px;font-weight:700;font-size:14px}
 .empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:40px 0}
 /* Info blocks */
 .info-grid{display:grid;gap:14px}
@@ -102,6 +105,18 @@ section{padding:28px 0}
 .steps{counter-reset:s;margin-top:6px}
 .steps li{counter-increment:s;list-style:none;color:var(--muted);font-size:14px;padding:7px 0 7px 34px;position:relative}
 .steps li::before{content:counter(s);position:absolute;left:0;top:7px;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#04160b;font-weight:800;font-size:13px;display:grid;place-items:center}
+/* Customizer */
+.customizer{display:grid;gap:20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin-top:14px}
+@media(min-width:760px){.customizer{grid-template-columns:1fr 1fr;align-items:start}}
+.cust-preview{background:var(--surface2);border:1px solid var(--line);border-radius:14px;display:grid;place-items:center;padding:16px;min-height:280px}
+.cust-preview svg{width:100%;max-width:280px;height:auto}
+.cust-form h3{font-size:18px}
+.cust-sub{color:var(--muted);font-size:14px;margin:6px 0 14px}
+.model-pills{display:flex;gap:8px;flex-wrap:wrap}
+.model-pill{background:var(--surface2);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:11px 14px;font-weight:700;font-size:14px}
+.model-pill.active{background:var(--text);color:#0a0a0a;border-color:var(--text)}
+.model-pill .dot{width:14px;height:14px;border-radius:50%;display:inline-block;border:1px solid rgba(255,255,255,.35);vertical-align:-2px;margin-right:6px}
+.model-pill.active .dot{border-color:rgba(0,0,0,.3)}
 /* Footer */
 footer{border-top:1px solid var(--line);padding:44px 0 100px;color:var(--muted);font-size:14px}
 footer a{color:var(--text);text-decoration:none}
@@ -132,10 +147,10 @@ footer a:hover{text-decoration:underline}
 .sheet-img svg{width:100%;max-width:300px;margin:0 auto}
 .field{margin-bottom:12px}
 .field label{display:block;font-size:13px;font-weight:700;margin-bottom:6px;color:var(--muted)}
-.field input,.field select{width:100%;background:var(--surface2);border:1px solid var(--line);border-radius:10px;color:var(--text);padding:11px 12px;font-size:15px;outline:none}
+.field input,.field select{width:100%;background:var(--surface2);border:1px solid var(--line);border-radius:10px;color:var(--text);padding:11px 12px;font-size:16px;outline:none}
 .field input:focus,.field select:focus{border-color:var(--accent)}
 .size-pills{display:flex;gap:8px;flex-wrap:wrap}
-.size-pill{background:var(--surface2);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:9px 14px;font-weight:700;font-size:14px}
+.size-pill{background:var(--surface2);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:11px 15px;font-weight:700;font-size:14px}
 .size-pill.active{background:var(--accent);color:#04160b;border-color:var(--accent)}
 .size-pill.out{opacity:.35;text-decoration:line-through}
 .guide{font-size:13px;color:var(--muted);margin-top:8px}
@@ -171,8 +186,8 @@ footer a:hover{text-decoration:underline}
   <div class="header-in">
     <a class="logo" href="#"><span class="logo-ball"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7.5l3.2 2.3-1.2 3.8h-4L8.8 9.8 12 7.5z" fill="currentColor"/><path d="M12 3.5v4M5.5 8.5l3.8 1.4M18.5 8.5l-3.8 1.4M6 17l3-1.5M18 17l-3-1.5" stroke="currentColor" stroke-width="1.4"/></svg></span><span>FUTBETEO <em>STORE</em></span></a>
     <span class="spacer"></span>
-    <a class="wa-btn" href="https://wa.link/sq26tn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.8l.4-.5c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>WhatsApp</a>
-    <button class="cart-btn" id="cartBtn" type="button"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 4h2l2.4 12.2A2 2 0 0 0 9.4 18h7.9a2 2 0 0 0 2-1.6L21 8H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="21" r="1.4" fill="currentColor"/><circle cx="18" cy="21" r="1.4" fill="currentColor"/></svg> Carrito <span class="cart-count" id="cartCount" style="display:none">0</span></button>
+    <a class="wa-btn" href="https://wa.link/sq26tn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.8l.4-.5c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg><span class="wa-label">WhatsApp</span></a>
+    <button class="cart-btn" id="cartBtn" type="button" aria-label="Carrito"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 4h2l2.4 12.2A2 2 0 0 0 9.4 18h7.9a2 2 0 0 0 2-1.6L21 8H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="21" r="1.4" fill="currentColor"/><circle cx="18" cy="21" r="1.4" fill="currentColor"/></svg><span class="cart-count" id="cartCount" style="display:none">0</span></button>
   </div>
 </header>
 
@@ -181,7 +196,7 @@ footer a:hover{text-decoration:underline}
     <div class="hero-grid">
       <div>
         <p class="hero-kicker">Futbeteo Store — <b>La Habana</b></p>
-        <h1>La moda<br>del fútbol<br><span class="outline">a tu alcance.</span></h1>
+        <h1>La moda<br>del fútbol<br><span class="outline"><span class="a-solid">A</span> TU ALCANCE.</span></h1>
         <p>Camisetas retro, actuales y personalizadas de fútbol, béisbol, basketball, NFL y Fórmula 1. Elige la tuya y pídela por WhatsApp.</p>
         <div class="hero-cta">
           <a class="btn btn-green" href="#catalogo">Elige tu camiseta favorita</a>
@@ -236,6 +251,19 @@ footer a:hover{text-decoration:underline}
         <h3>También hacemos</h3>
         <p>Camisetas de béisbol, basketball, NFL y Fórmula 1, por encargo y con tu número favorito. Escríbenos y te decimos si el modelo que buscas está disponible.</p>
         <ul><li>Nombre y número</li><li>Por encargo</li><li>Todos los deportes</li></ul>
+      </div>
+    </div>
+    <div class="customizer">
+      <div class="cust-preview" id="custPreview"></div>
+      <div class="cust-form">
+        <h3>Diseña la tuya</h3>
+        <p class="cust-sub">Elige el modelo, escribe tu nombre y tu número, y mira cómo queda al momento.</p>
+        <div class="field"><label>Modelo</label><div class="model-pills" id="modelPills"></div></div>
+        <div class="field"><label>Nombre en la espalda</label><input id="custName" type="text" maxlength="12" placeholder="Ej: DAHEL" autocomplete="off"></div>
+        <div class="field"><label>Número en la espalda</label><input id="custNum" type="text" maxlength="2" inputmode="numeric" placeholder="Ej: 10" autocomplete="off"></div>
+        <div class="field"><label>Talla</label><div class="size-pills" id="custSizes"></div></div>
+        <div class="price-row"><span class="price">$50</span><span class="meta">Personalizada · por encargo</span></div>
+        <button type="button" class="btn btn-wa" id="custOrder" style="width:100%">Pedir esta personalizada por WhatsApp</button>
       </div>
     </div>
   </div>
@@ -534,6 +562,46 @@ $("sortSelect").addEventListener("change", renderGrid);
 $("cartBtn").addEventListener("click", () => { renderCart(); $("cartDrawer").classList.add("open"); });
 $("cartClose").addEventListener("click", () => $("cartDrawer").classList.remove("open"));
 $("productOverlay").addEventListener("click", e => { if (e.target === $("productOverlay")) closeProduct(); });
+
+/* Personalizador interactivo */
+const CUST_MODELS = [
+  {id:"blanca", label:"Blanca", base:"#f5f5f5", sleeve:"#f5f5f5", trim:"#111111", numColor:"#111111"},
+  {id:"negra", label:"Negra", base:"#161616", sleeve:"#161616", trim:"#ffffff", numColor:"#ffffff"},
+  {id:"roja", label:"Roja", base:"#da291c", sleeve:"#da291c", trim:"#ffffff", numColor:"#ffffff"},
+  {id:"azul", label:"Azul", base:"#004d98", sleeve:"#004d98", trim:"#ffffff", numColor:"#ffffff"},
+  {id:"amarilla", label:"Amarilla", base:"#ffdf00", sleeve:"#009b3a", trim:"#009b3a", numColor:"#009b3a"}
+];
+let custModel = CUST_MODELS[0], custSize = "M";
+function jerseyBack(m, nm, num){
+  const body = "M70 30 L50 40 L30 76 L56 90 L62 76 L62 176 Q62 184 70 184 L130 184 Q138 184 138 176 L138 76 L144 90 L170 76 L150 40 L130 30 Q118 46 100 46 Q82 46 70 30 Z";
+  return '<svg viewBox="0 0 200 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vista previa de tu camiseta personalizada">'
+    + '<path d="'+body+'" fill="'+m.base+'" stroke="rgba(0,0,0,.3)" stroke-width="2"/>'
+    + '<path d="M50 40 L30 76 L56 90 L64 74 L64 50 Z" fill="'+m.sleeve+'"/>'
+    + '<path d="M150 40 L170 76 L144 90 L136 74 L136 50 Z" fill="'+m.sleeve+'"/>'
+    + '<path d="M82 32 Q100 48 118 32" fill="none" stroke="'+m.trim+'" stroke-width="5" stroke-linecap="round"/>'
+    + '<text x="100" y="92" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" font-weight="800" letter-spacing="3" fill="'+m.numColor+'">'+(nm||"TU NOMBRE")+'</text>'
+    + '<text x="100" y="150" text-anchor="middle" font-family="Arial,sans-serif" font-size="52" font-weight="900" fill="'+m.numColor+'">'+(num||"00")+'</text>'
+    + '</svg>';
+}
+function renderCust(){
+  $("custPreview").innerHTML = jerseyBack(custModel, $("custName").value.trim().toUpperCase(), $("custNum").value.trim());
+  $("modelPills").innerHTML = CUST_MODELS.map(m =>
+    '<button type="button" class="model-pill'+(m.id===custModel.id?" active":"")+'" data-model="'+m.id+'"><span class="dot" style="background:'+m.base+'"></span>'+m.label+'</button>').join("");
+  document.querySelectorAll("#modelPills .model-pill").forEach(b => b.onclick = () => { custModel = CUST_MODELS.find(m=>m.id===b.dataset.model); renderCust(); });
+  $("custSizes").innerHTML = SIZES.map(s =>
+    '<button type="button" class="size-pill'+(s===custSize?" active":"")+'" data-size="'+s+'">'+s+'</button>').join("");
+  document.querySelectorAll("#custSizes .size-pill").forEach(b => b.onclick = () => { custSize = b.dataset.size; renderCust(); });
+}
+$("custName").addEventListener("input", renderCust);
+$("custNum").addEventListener("input", renderCust);
+$("custOrder").addEventListener("click", () => {
+  const nm = $("custName").value.trim().toUpperCase(), num = $("custNum").value.trim();
+  if (!nm || !num){ toast("Escribe el nombre y el número"); return; }
+  const msg = "Hola Futbeteo Store, quiero una camiseta personalizada:\n\n• Modelo " + custModel.label + " — Talla " + custSize + " — $50\n  Nombre: " + nm + " · Número: " + num + "\n\nSubtotal: $50";
+  window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(msg), "_blank");
+});
+renderCust();
+
 
 renderFilters();
 renderGrid();
