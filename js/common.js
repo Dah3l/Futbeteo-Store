@@ -107,3 +107,37 @@ function checkout(){
   const client = $("clientName") ? $("clientName").value.trim() : "";
   openWa(cart, province, client);
 }
+
+/* Tarjeta de producto compartida (catálogo y relacionados). */
+function cardHTML(p){
+  return '<article class="card">'
+    + '<a class="card-link" href="producto.html?id='+p.id+'" aria-label="'+p.name+'"><div class="card-img">'+jersey(p)+'</div></a>'
+    + '<div class="card-body"><a class="card-link" href="producto.html?id='+p.id+'"><p class="card-name">'+p.name+'</p></a>'
+    + '<p class="card-meta">'+p.team+' · '+p.season+'</p>'
+    + '<p class="card-price">'+money(p.price)+(p.old?'<span class="price-old">'+money(p.old)+'</span>':'')+'</p></div>'
+    + '<div class="card-foot"><button type="button" class="btn-add" onclick="quickAdd('+p.id+')">Añadir</button></div>'
+    + '</article>';
+}
+/* Añadir rápido desde la tarjeta: primera talla disponible, sin nombre/número. */
+function quickAdd(id){
+  const p = PRODUCTS.find(x=>x.id===id);
+  if (!p) return;
+  const size = availSizes(p)[0];
+  if (!size){ toast("Sin tallas disponibles"); return; }
+  addToCart(p, size, "", "", 1);
+  toast(p.name+" añadida al pedido");
+}
+
+/* Menú móvil del header (ambas páginas). */
+(function(){
+  const t = $("navToggle"), n = $("mainNav");
+  if (!t || !n) return;
+  t.addEventListener("click", () => {
+    const open = n.classList.toggle("open");
+    t.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  n.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+    n.classList.remove("open");
+    t.setAttribute("aria-expanded", "false");
+  }));
+})();
