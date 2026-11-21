@@ -78,12 +78,7 @@ function orderDirect(){
 function renderRelated(p){
   const rel = PRODUCTS.filter(x => x.cat===p.cat && x.id!==p.id).slice(0,4);
   if (!rel.length){ $("relatedSec").hidden = true; return; }
-  $("relatedGrid").innerHTML = rel.map(x =>
-    '<a class="card" href="producto.html?id='+x.id+'">'
-    + '<div class="card-img">'+jersey(x)+'</div>'
-    + '<div class="card-body"><p class="card-name">'+x.name+'</p>'
-    + '<p class="card-price">'+money(x.price)+(x.old?'<span class="price-old">'+money(x.old)+'</span>':'')+'</p></div>'
-    + '</a>').join("");
+  $("relatedGrid").innerHTML = rel.map(x => cardHTML(x)).join("");
 }
 
 $("cartBtn").addEventListener("click", () => { renderCart(); $("cartDrawer").classList.add("open"); });
