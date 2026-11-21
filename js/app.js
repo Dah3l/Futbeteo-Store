@@ -30,6 +30,7 @@ function filtered(){
   if (s==="low") list = [...list].sort((a,b)=>a.price-b.price);
   if (s==="high") list = [...list].sort((a,b)=>b.price-a.price);
   if (s==="feat") list = [...list].sort((a,b)=>(b.feat||0)-(a.feat||0));
+  if (s==="new") list = [...list].sort((a,b)=>b.id-a.id);
   return list;
 }
 
@@ -37,12 +38,25 @@ function renderGrid(){
   const list = filtered();
   $("resultCount").textContent = list.length + (list.length===1 ? " camiseta" : " camisetas");
   if (!list.length){ $("grid").innerHTML = '<p class="empty">No encontramos esa camiseta. Prueba con otro equipo o quita el filtro.</p>'; return; }
-  $("grid").innerHTML = list.map(p =>
-    '<a class="card" href="producto.html?id='+p.id+'">'
-    + '<div class="card-img">'+jersey(p)+'</div>'
-    + '<div class="card-body"><p class="card-name">'+p.name+'</p>'
-    + '<p class="card-price">'+money(p.price)+(p.old?'<span class="price-old">'+money(p.old)+'</span>':'')+'</p></div>'
-    + '</a>').join("");
+  $("grid").innerHTML = list.map(p => cardHTML(p)).join("");
+}
+
+/* Colecciones: una tarjeta por categoría con su camiseta representativa. */
+function renderCollections(){
+  const box = $("collGrid");
+  if (!box) return;
+  box.innerHTML = CATS.filter(c=>c[0]!=="all").map(c => {
+    const items = PRODUCTS.filter(p=>p.cat===c[0]);
+    const rep = items[0];
+    return '<button type="button" class="coll-tile" data-cat="'+c[0]+'">'
+      + '<div class="coll-img">'+jersey(rep)+'</div>'
+      + '<div class="coll-body"><p class="coll-name">'+c[1]+'</p>'
+      + '<p class="coll-count">'+items.length+(items.length===1?" camiseta":" camisetas")+'</p></div></button>';
+  }).join("");
+  box.querySelectorAll(".coll-tile").forEach(t => t.onclick = () => {
+    activeCat = t.dataset.cat; renderFilters(); renderGrid();
+    document.getElementById("catalogo").scrollIntoView({behavior:"smooth"});
+  });
 }
 
 $("searchInput").addEventListener("input", () => { toggleClear(); renderGrid(); });
@@ -53,6 +67,11 @@ $("filtersBtn").addEventListener("click", togglePanel);
 $("searchClear").addEventListener("click", () => { $("searchInput").value = ""; toggleClear(); renderGrid(); $("searchInput").focus(); });
 $("cartBtn").addEventListener("click", () => { renderCart(); $("cartDrawer").classList.add("open"); });
 $("cartClose").addEventListener("click", () => $("cartDrawer").classList.remove("open"));
+$("heroNewBtn").addEventListener("click", (e) => {
+  e.preventDefault();
+  $("sortSelect").value = "new"; renderGrid();
+  document.getElementById("catalogo").scrollIntoView({behavior:"smooth"});
+});
 
 /* Personalizador interactivo */
 const CUST_MODELS = [
@@ -96,6 +115,7 @@ renderCust();
 
 renderFilters();
 renderTeamOptions();
+renderCollections();
 renderGrid();
 renderCart();
 saveCart();
