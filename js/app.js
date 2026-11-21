@@ -70,7 +70,7 @@ function jerseyBack(m, nm, num){
     + '<path d="M50 40 L30 76 L56 90 L64 74 L64 50 Z" fill="'+m.sleeve+'"/>'
     + '<path d="M150 40 L170 76 L144 90 L136 74 L136 50 Z" fill="'+m.sleeve+'"/>'
     + '<path d="M82 32 Q100 48 118 32" fill="none" stroke="'+m.trim+'" stroke-width="5" stroke-linecap="round"/>'
-    + '<text x="100" y="92" text-anchor="middle" font-family="'+FONT+'" font-size="16" font-weight="800" letter-spacing="3" fill="'+m.numColor+'">'+(nm||"TU NOMBRE")+'</text>'
+    + '<text x="100" y="92" text-anchor="middle" font-family="'+FONT+'" font-size="16" font-weight="800" letter-spacing="3" textLength="70" lengthAdjust="spacingAndGlyphs" fill="'+m.numColor+'">'+(nm||"TU NOMBRE")+'</text>'
     + '<text x="100" y="150" text-anchor="middle" font-family="'+FONT+'" font-size="52" font-weight="900" fill="'+m.numColor+'">'+(num||"00")+'</text>'
     + '</svg>';
 }
