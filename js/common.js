@@ -144,3 +144,25 @@ function quickAdd(id){
     t.setAttribute("aria-expanded", "false");
   }));
 })();
+
+/* Carrito: el cajón existe en todas las páginas. */
+(function(){
+  const b = $("cartBtn"), c = $("cartClose");
+  if (b) b.addEventListener("click", () => { renderCart(); $("cartDrawer").classList.add("open"); });
+  if (c) c.addEventListener("click", () => $("cartDrawer").classList.remove("open"));
+})();
+
+/* Buscador del header: en el catálogo filtra en la misma página; fuera de él, navega a catalogo.html?q=. */
+(function(){
+  const hs = $("headerSearch");
+  if (!hs) return;
+  const params = new URLSearchParams(location.search);
+  if (params.get("q")) hs.value = params.get("q");
+  hs.addEventListener("keydown", (e) => {
+    if (e.key !== "Enter") return;
+    const q = hs.value.trim();
+    const inPage = $("searchInput");
+    if (inPage){ inPage.value = q; inPage.dispatchEvent(new Event("input")); }
+    else { location.href = "catalogo.html" + (q ? "?q="+encodeURIComponent(q) : ""); }
+  });
+})();
