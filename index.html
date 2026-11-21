@@ -6,15 +6,27 @@
 <title>Futbeteo Store — La moda del fútbol a tu alcance</title>
 <link rel="icon" type="image/svg+xml" href="logo.svg">
 <meta name="description" content="Futbeteo Store: camisetas retro, actuales y personalizadas de fútbol, béisbol, basketball, NFL y Fórmula 1. Envíos a todo el país. Pide por WhatsApp.">
-<link rel="stylesheet" href="css/styles.css?v=5">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Futbeteo Store — La moda del fútbol a tu alcance">
+<meta property="og:description" content="Camisetas retro, actuales y personalizadas de fútbol, béisbol, basketball, NFL y Fórmula 1. Envíos a todo el país. Pide por WhatsApp.">
+<meta property="og:url" content="https://dah3l.github.io/Futbeteo-Store/">
+<link rel="stylesheet" href="css/styles.css?v=6">
 </head>
 <body>
 <header>
   <div class="header-in">
     <a class="logo" href="index.html"><span class="logo-ball"><img src="logo.svg" alt="Futbeteo Store"></span><span>FUTBETEO <em>STORE</em></span></a>
+    <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#colecciones">Colecciones</a>
+      <a href="#personalizadas">Personalizadas</a>
+      <a href="#envios">Envíos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
     <span class="spacer"></span>
     <a class="wa-btn" href="https://wa.link/sq26tn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.8l.4-.5c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg><span class="wa-label">WhatsApp</span></a>
     <button class="cart-btn" id="cartBtn" type="button" aria-label="Carrito"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 4h2l2.4 12.2A2 2 0 0 0 9.4 18h7.9a2 2 0 0 0 2-1.6L21 8H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="21" r="1.4" fill="currentColor"/><circle cx="18" cy="21" r="1.4" fill="currentColor"/></svg><span class="cart-count" id="cartCount" style="display:none">0</span></button>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Menú" aria-expanded="false" aria-controls="mainNav"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
   </div>
 </header>
 
@@ -22,30 +34,28 @@
   <div class="container">
     <div class="hero-grid">
       <div>
-        <p class="hero-kicker">Camisetas originales · Envíos a todo el país</p>
-        <h1>Futbeteo<br><span class="outline">Store</span></h1>
-        <p class="hero-slogan">La moda deportiva a tu alcance.</p>
-        <p>Camisetas retro, actuales y personalizadas de fútbol, béisbol, basketball, NFL y Fórmula 1. Elige la tuya y pídela por WhatsApp.</p>
+        <p class="hero-kicker">Futbeteo Store — La Habana</p>
+        <h1>El fútbol<br><span class="accent">se viste.</span></h1>
+        <p class="hero-slogan">Tu pasión, tus colores, tu camiseta.</p>
         <div class="hero-cta">
-          <a class="btn btn-green" href="#catalogo">Elige tu camiseta favorita</a>
-          <a class="btn btn-ghost" href="#personalizadas">Personalizar la mía</a>
-        </div>
-        <div class="trust">
-          <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" aria-hidden="true"><path d="M2 6h12v10H2zM14 9h4l3 3v4h-7z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="6.5" cy="18" r="1.8" fill="currentColor"/><circle cx="17" cy="18" r="1.8" fill="currentColor"/></svg> <b>Envíos a todo el país</b></span>
-          <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg> <b>100% máxima calidad</b></span>
-          <span><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.8l.4-.5c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg> <b>Pide por WhatsApp</b></span>
+          <a class="btn btn-green" href="#catalogo">Explorar colección</a>
+          <a class="btn btn-ghost" href="#catalogo" id="heroNewBtn">Ver novedades</a>
         </div>
       </div>
       <div class="hero-visual">
         <span class="hero-ring"></span>
         <svg class="jersey-big" viewBox="0 0 200 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Camiseta Futbeteo Store"><path d="M70 30 L50 40 L30 76 L56 90 L62 76 L62 176 Q62 184 70 184 L130 184 Q138 184 138 176 L138 76 L144 90 L170 76 L150 40 L130 30 Q118 46 100 46 Q82 46 70 30 Z" fill="#f5f5f5" stroke="rgba(0,0,0,.35)" stroke-width="2"/><path d="M50 40 L30 76 L56 90 L64 74 L64 50 Z" fill="#e8e8e8"/><path d="M150 40 L170 76 L144 90 L136 74 L136 50 Z" fill="#e8e8e8"/><path d="M82 32 Q100 48 118 32" fill="none" stroke="#111111" stroke-width="5" stroke-linecap="round"/><text x="100" y="140" text-anchor="middle" font-family="Arial,sans-serif" font-size="46" font-weight="900" fill="#111111">7</text><text x="100" y="166" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="2" textLength="68" lengthAdjust="spacingAndGlyphs" fill="#111111" opacity="0.8">FUTBETEO</text></svg>
         <span class="hero-tag t1">Nuevo drop · Vice City</span>
-        <span class="hero-tag t2">Retro · Actuales · Personalizadas</span>
       </div>
     </div>
   </div>
-  <div class="stripe" aria-hidden="true"></div>
-  <div class="marquee"><span>Retro ✦ Actuales ✦ Personalizadas ✦ Béisbol ✦ Basketball ✦ NFL ✦ Fórmula 1 ✦ Envíos a todo el país ✦&nbsp; Retro ✦ Actuales ✦ Personalizadas ✦ Béisbol ✦ Basketball ✦ NFL ✦ Fórmula 1 ✦ Envíos a todo el país ✦&nbsp; </span></div>
+</section>
+
+<section id="colecciones">
+  <div class="container">
+    <div class="sec-head"><h2>Colecciones</h2><p>Elige tu mundo</p></div>
+    <div class="coll-grid" id="collGrid"></div>
+  </div>
 </section>
 
 <section id="catalogo">
@@ -76,6 +86,7 @@
         <label for="sortSelect">Ordenar</label>
         <select id="sortSelect">
           <option value="feat">Destacados</option>
+          <option value="new">Novedades</option>
           <option value="low">Menor precio</option>
           <option value="high">Mayor precio</option>
         </select>
@@ -132,7 +143,7 @@
   </div>
 </section>
 
-<footer>
+<footer id="contacto">
   <div class="container">
     <div class="foot-grid">
       <div class="foot-brand">
@@ -165,7 +176,7 @@
   </div>
 </footer>
 
-<a class="wa-float" href="https://wa.link/sq26tn" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.8l.4-.5c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></a>
+<a class="wa-float" href="https://wa.link/sq26tn" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.8l.4-.5c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></a>
 
 <div class="drawer" id="cartDrawer">
   <div class="drawer-head"><h2>Tu pedido</h2><button class="close-btn" id="cartClose" type="button">✕</button></div>
@@ -176,7 +187,7 @@
 <div class="toast" id="toast"></div>
 
 <script src="js/products.js?v=3"></script>
-<script src="js/common.js?v=4"></script>
-<script src="js/app.js?v=4"></script>
+<script src="js/common.js?v=6"></script>
+<script src="js/app.js?v=6"></script>
 </body>
 </html>
