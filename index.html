@@ -41,6 +41,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(11,15,14,.92);backdrop-f
 .hero h1{font-size:clamp(42px,9vw,76px);line-height:.98;font-weight:900;letter-spacing:-1.5px;text-transform:uppercase;margin:14px 0 0}
 .hero h1 .outline{display:block;color:#0a0a0a;-webkit-text-stroke:4px var(--text);paint-order:stroke fill}
 .hero p{color:var(--muted);margin:16px 0 22px;font-size:16px;max-width:520px}
+.hero p.hero-tag{font-size:clamp(20px,4.5vw,28px);font-weight:800;color:var(--text);margin:16px 0 0;line-height:1.2}
 .hero-visual{position:relative;display:grid;place-items:center;padding:10px 0 0}
 .hero-ring{position:absolute;width:min(78vw,380px);height:min(78vw,380px);border:1px solid var(--line);border-radius:50%}
 .hero-ring::after{content:"";position:absolute;inset:22px;border:1px dashed var(--line);border-radius:50%}
@@ -195,8 +196,9 @@ footer a:hover{text-decoration:underline}
   <div class="container">
     <div class="hero-grid">
       <div>
-        <p class="hero-kicker">Futbeteo Store — <b>La Habana</b></p>
-        <h1>La moda<br>deportiva<br><span class="outline">A TU ALCANCE.</span></h1>
+        <p class="hero-kicker">La Habana · Solo con cita</p>
+        <h1>Futbeteo<br><span class="outline">Store</span></h1>
+        <p class="hero-tag">La moda deportiva a tu alcance.</p>
         <p>Camisetas retro, actuales y personalizadas de fútbol, béisbol, basketball, NFL y Fórmula 1. Elige la tuya y pídela por WhatsApp.</p>
         <div class="hero-cta">
           <a class="btn btn-green" href="#catalogo">Elige tu camiseta favorita</a>
