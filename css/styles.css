@@ -16,6 +16,7 @@
 }
 @media(min-width:760px){:root{--fs-h1:32px;--fs-h2:26px;--section:56px}}
 *{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:var(--fs-body);line-height:1.5}
 a{color:inherit}
 img,svg{display:block;max-width:100%}
@@ -122,6 +123,7 @@ section{padding:var(--section) 0}
 .card-meta{font-size:13px;color:var(--muted)}
 .card-price{font-size:17px;font-weight:900}
 .card-price .price-old{font-size:13px;color:var(--muted);text-decoration:line-through;font-weight:400;margin-left:6px}
+.card-avail{font-size:13px;font-weight:700;color:var(--danger)}
 .card-foot{padding:0 16px 16px}
 .card-foot .btn-add{width:100%}
 .price-row{display:flex;align-items:baseline;gap:8px;margin-top:auto}
@@ -227,4 +229,5 @@ footer a:hover{text-decoration:underline}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
 }
