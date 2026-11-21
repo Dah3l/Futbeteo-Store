@@ -10,20 +10,32 @@
 <meta property="og:title" content="Futbeteo Store — La moda del fútbol a tu alcance">
 <meta property="og:description" content="Camisetas retro, actuales y personalizadas de fútbol, béisbol, basketball, NFL y Fórmula 1. Envíos a todo el país. Pide por WhatsApp.">
 <meta property="og:url" content="https://dah3l.github.io/Futbeteo-Store/">
-<link rel="stylesheet" href="css/styles.css?v=7">
+<link rel="stylesheet" href="css/styles.css?v=8">
 </head>
 <body>
+<div class="topbar">
+  <div class="container">
+    <span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true"><path d="M2 6h12v10H2zM14 9h4l3 3v4h-7z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="6.5" cy="18" r="1.8" fill="currentColor"/><circle cx="17" cy="18" r="1.8" fill="currentColor"/></svg> <b>Envíos a todo el país</b></span>
+    <span class="tb-mid"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.8l.4-.5c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg> <b>Pide por WhatsApp</b></span>
+    <span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.7"/></svg> <b>Solo con cita · Miramar</b></span>
+  </div>
+</div>
 <header>
   <div class="header-in">
     <a class="logo" href="index.html"><span class="logo-ball"><img src="logo.svg" alt="Futbeteo Store"></span><span>FUTBETEO <em>STORE</em></span></a>
     <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
-      <a href="#catalogo">Catálogo</a>
+      <a href="index.html" class="active">Inicio</a>
+      <a href="catalogo.html">Catálogo</a>
       <a href="#colecciones">Colecciones</a>
       <a href="#personalizadas">Personalizadas</a>
       <a href="#envios">Envíos</a>
       <a href="#contacto">Contacto</a>
     </nav>
     <span class="spacer"></span>
+    <div class="header-search">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="#9ca3af" stroke-width="2"/><path d="M16.5 16.5L21 21" stroke="#9ca3af" stroke-width="2" stroke-linecap="round"/></svg>
+      <input type="search" id="headerSearch" placeholder="Buscar camiseta…" aria-label="Buscar camiseta">
+    </div>
     <a class="wa-btn" href="https://wa.link/sq26tn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.8l.4-.5c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg><span class="wa-label">WhatsApp</span></a>
     <button class="cart-btn" id="cartBtn" type="button" aria-label="Carrito"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 4h2l2.4 12.2A2 2 0 0 0 9.4 18h7.9a2 2 0 0 0 2-1.6L21 8H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="21" r="1.4" fill="currentColor"/><circle cx="18" cy="21" r="1.4" fill="currentColor"/></svg><span class="cart-count" id="cartCount" style="display:none">0</span></button>
     <button class="nav-toggle" id="navToggle" type="button" aria-label="Menú" aria-expanded="false" aria-controls="mainNav"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
@@ -38,8 +50,13 @@
         <h1>El fútbol<br><span class="accent">se viste.</span></h1>
         <p class="hero-slogan">Tu pasión, tus colores, tu camiseta.</p>
         <div class="hero-cta">
-          <a class="btn btn-green" href="#catalogo">Explorar colección</a>
-          <a class="btn btn-ghost" href="#catalogo" id="heroNewBtn">Ver novedades</a>
+          <a class="btn btn-green" href="catalogo.html">Explorar colección</a>
+          <a class="btn btn-ghost" href="catalogo.html?orden=novedades" id="heroNewBtn">Ver novedades</a>
+        </div>
+        <div class="trust">
+          <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg> <b>100% máxima calidad</b></span>
+          <span><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.8l.4-.5c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg> <b>Pide por WhatsApp</b></span>
+          <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" aria-hidden="true"><path d="M2 6h12v10H2zM14 9h4l3 3v4h-7z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="6.5" cy="18" r="1.8" fill="currentColor"/><circle cx="17" cy="18" r="1.8" fill="currentColor"/></svg> <b>Envíos a todo el país</b></span>
         </div>
       </div>
       <div class="hero-visual">
@@ -54,45 +71,35 @@
 <section id="colecciones">
   <div class="container">
     <div class="sec-head"><h2>Colecciones</h2><p>Elige tu mundo</p></div>
-    <div class="coll-grid" id="collGrid"></div>
+    <div class="cat-strip" id="collGrid"></div>
   </div>
 </section>
 
-<section id="catalogo">
+<section id="destacados">
   <div class="container">
-    <div class="sec-head"><h2>Catálogo</h2><p id="resultCount"></p></div>
-    <div class="filters" id="filters"></div>
-    <div class="search-row">
-      <div class="search-box">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="#9ca3af" stroke-width="2"/><path d="M16.5 16.5L21 21" stroke="#9ca3af" stroke-width="2" stroke-linecap="round"/></svg>
-        <input type="search" id="searchInput" placeholder="Buscar camiseta…" aria-label="Buscar camiseta">
-        <button type="button" class="search-clear" id="searchClear" aria-label="Limpiar búsqueda">✕</button>
+    <div class="sec-head"><h2>Destacados</h2><p>Las favoritas de la tienda</p><a class="sec-link" href="catalogo.html">Ver todos los productos →</a></div>
+    <div class="grid" id="featuredGrid"></div>
+  </div>
+</section>
+
+<section id="ofertas">
+  <div class="container">
+    <div class="banners">
+      <div class="banner">
+        <p class="banner-kicker">Oferta real</p>
+        <h3>Ahorra<br><span class="accent">en retro.</span></h3>
+        <p>Manchester United Retro 1998-99: $55, antes $70. Una sola unidad por talla.</p>
+        <a class="btn btn-green" href="catalogo.html?cat=retro">Ver retro</a>
+        <span class="banner-jersey"><svg viewBox="0 0 200 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Camiseta retro"><path d="M70 30 L50 40 L30 76 L56 90 L62 76 L62 176 Q62 184 70 184 L130 184 Q138 184 138 176 L138 76 L144 90 L170 76 L150 40 L130 30 Q118 46 100 46 Q82 46 70 30 Z" fill="#da291c" stroke="rgba(0,0,0,.3)" stroke-width="2"/><path d="M50 40 L30 76 L56 90 L64 74 L64 50 Z" fill="#da291c"/><path d="M150 40 L170 76 L144 90 L136 74 L136 50 Z" fill="#da291c"/><path d="M82 32 Q100 48 118 32" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/><text x="100" y="140" text-anchor="middle" font-family="Arial,sans-serif" font-size="46" font-weight="900" fill="#ffffff">7</text></svg></span>
       </div>
-      <button type="button" class="btn-filters" id="filtersBtn" aria-expanded="false" aria-controls="filterPanel">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-        <span>Filtros</span>
-      </button>
-    </div>
-    <div class="filter-panel" id="filterPanel" hidden>
-      <div class="filter-field">
-        <label for="teamSelect">Equipo</label>
-        <select id="teamSelect"><option value="all">Todos los equipos</option></select>
-      </div>
-      <div class="filter-field">
-        <label for="sizeSelect">Talla</label>
-        <select id="sizeSelect"><option value="all">Todas las tallas</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
-      </div>
-      <div class="filter-field">
-        <label for="sortSelect">Ordenar</label>
-        <select id="sortSelect">
-          <option value="feat">Destacados</option>
-          <option value="new">Novedades</option>
-          <option value="low">Menor precio</option>
-          <option value="high">Mayor precio</option>
-        </select>
+      <div class="banner">
+        <p class="banner-kicker">Todos los equipos</p>
+        <h3>Apoya a<br><span class="accent">tu equipo.</span></h3>
+        <p>Del club a la selección, la tuya está aquí. Retro, actuales y personalizadas.</p>
+        <a class="btn btn-green" href="catalogo.html">Explorar equipos</a>
+        <span class="banner-jersey"><svg viewBox="0 0 200 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Camiseta de selección"><path d="M70 30 L50 40 L30 76 L56 90 L62 76 L62 176 Q62 184 70 184 L130 184 Q138 184 138 176 L138 76 L144 90 L170 76 L150 40 L130 30 Q118 46 100 46 Q82 46 70 30 Z" fill="#75aadb" stroke="rgba(0,0,0,.3)" stroke-width="2"/><path d="M50 40 L30 76 L56 90 L64 74 L64 50 Z" fill="#75aadb"/><path d="M150 40 L170 76 L144 90 L136 74 L136 50 Z" fill="#75aadb"/><path d="M82 32 Q100 48 118 32" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/><rect x="62" y="98" width="76" height="12" fill="#ffffff" opacity="0.9"/><text x="100" y="140" text-anchor="middle" font-family="Arial,sans-serif" font-size="46" font-weight="900" fill="#ffffff">10</text></svg></span>
       </div>
     </div>
-    <div class="grid" id="grid"></div>
   </div>
 </section>
 
@@ -143,6 +150,15 @@
   </div>
 </section>
 
+<section class="newsletter">
+  <div class="container">
+    <div class="nl-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <h2>Únete a la familia Futbeteo</h2>
+    <p>Novedades, drops y ofertas directas por WhatsApp. Sin spam.</p>
+    <a class="btn btn-wa" href="https://wa.me/5358423238?text=Hola%20Futbeteo%20Store%2C%20quiero%20recibir%20las%20novedades%20y%20ofertas.">Unirme por WhatsApp</a>
+  </div>
+</section>
+
 <footer id="contacto">
   <div class="container">
     <div class="foot-grid">
@@ -153,7 +169,8 @@
       <div class="foot-col">
         <h4>Tienda</h4>
         <ul>
-          <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="#colecciones">Colecciones</a></li>
           <li><a href="#personalizadas">Personalizadas</a></li>
           <li><a href="#envios">Envíos</a></li>
         </ul>
@@ -187,7 +204,7 @@
 <div class="toast" id="toast"></div>
 
 <script src="js/products.js?v=3"></script>
-<script src="js/common.js?v=7"></script>
-<script src="js/app.js?v=6"></script>
+<script src="js/common.js?v=8"></script>
+<script src="js/landing.js?v=8"></script>
 </body>
 </html>
